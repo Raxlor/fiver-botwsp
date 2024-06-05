@@ -28,8 +28,8 @@ This service provides a comprehensive solution for integrating UltraMSG API with
 
 1. Clone the repository to your local environment:
     \`\`\`sh
-    git clone https://github.com/yourusername/ultramsg-whatsapp-integration.git
-    cd ultramsg-whatsapp-integration
+    git clone https://github.com/raxlor/fiver-botwsp
+    cd fiver-botwsp
     \`\`\`
 
 2. Install the required dependencies using Composer:
@@ -43,7 +43,7 @@ This service provides a comprehensive solution for integrating UltraMSG API with
 
 Create a \`config.php\` file in the root directory with the following structure:
 
-\`\`\`php
+```php
 <?php
 return [
     // UltraMSG configuration
@@ -73,7 +73,7 @@ Unfortunately, there was an error. The serial number for your customer card coul
     ]
 ];
 ?>
-\`\`\`
+```
 
 ## Usage
 
