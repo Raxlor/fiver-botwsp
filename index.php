@@ -111,9 +111,12 @@ if (empty($user['serialNumber'])) {
     exit;
 }
 
-// Update the user's mobile number
+// Extract the number part from the 'from' data
+$mobilenr = preg_replace('/@.*$/', '', $message['data']['from']);
+
+// Prepare and execute the SQL statement to update the user's mobile number
 $stmt = $pdo->prepare("UPDATE tbl_users SET mobilenr = :mobilenr WHERE email = :email");
-$stmt->execute([':mobilenr' => $message['data']['from'], ':email' => $email]);
+$stmt->execute([':mobilenr' => $mobilenr, ':email' => $email]);
 
 // Send the document to the sender
 $documentUrl = "https://vip.chabrol.wine/beheer/passes/{$user['serialNumber']}.pkpass";
